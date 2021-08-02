@@ -42,7 +42,7 @@ namespace PaymentPortal.Controllers
             {
                 {
                     responseBody.Add("Error", message);
-                    responseBody.Add("StatusCode", 400);
+                    responseBody.Add("StatusCode", "BadInput");
                     return responseBody;
                 }                
             }
@@ -65,7 +65,7 @@ namespace PaymentPortal.Controllers
                 {
 
                     responseBody.Add("Error", errorMessage);
-                    responseBody.Add("StatusCode", 400);
+                    responseBody.Add("StatusCode", "BadInput");
                     return responseBody;
                 }
             }
@@ -76,7 +76,7 @@ namespace PaymentPortal.Controllers
                 return responseBody;
             }
             responseBody.Add("Success", "Fetched the remaining balance for <" + ssn + "> each Invoice successfully");
-            responseBody.Add("StatusCode", 200);
+            responseBody.Add("StatusCode", "Success");
             responseBody.Add("Output ", "Balance with Each invoice ");
             if(customerDict.Count==0)
             {
@@ -103,7 +103,7 @@ namespace PaymentPortal.Controllers
                 {
 
                     responseBody.Add("Error", errorMessage);
-                    responseBody.Add("StatusCode", 400);
+                    responseBody.Add("StatusCode", "BadInput");
                     return responseBody;
                 }
             }
@@ -114,7 +114,7 @@ namespace PaymentPortal.Controllers
                 return responseBody;
             }
             responseBody.Add("Success", "Fetched the remaining balance for <" + ssn + "> successfully");
-            responseBody.Add("StatusCode", 200);
+            responseBody.Add("StatusCode", "Success");
             responseBody.Add("Output ", outputBalance);
             return responseBody;
         }
@@ -131,7 +131,7 @@ namespace PaymentPortal.Controllers
                 {
 
                     responseBody.Add("Error", errorMessage);
-                    responseBody.Add("StatusCode", 400);
+                    responseBody.Add("StatusCode", "BadInput");
                     return responseBody;
                 }
             }
@@ -142,7 +142,7 @@ namespace PaymentPortal.Controllers
                 return responseBody;
             }
              responseBody.Add("Success", ErrorClass._errorDict["CusSuccess"]);
-             responseBody.Add("StatusCode", 200);
+             responseBody.Add("StatusCode", "Success");
              return responseBody;
         }
 
@@ -162,7 +162,7 @@ namespace PaymentPortal.Controllers
                 if (!string.IsNullOrEmpty(errorMessage))
                 {
                     responseBody.Add("Error", errorMessage);
-                    responseBody.Add("StatusC", "BadInput");
+                    responseBody.Add("StatusCode", "BadInput");
                     return responseBody;
                 }
             }
