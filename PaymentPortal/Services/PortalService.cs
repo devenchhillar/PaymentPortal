@@ -45,12 +45,12 @@ namespace PaymentPortal.Services
             {
                 if (!validate.IsValidSSN(ssn))
                 {
-                    sbError.AppendLine();
+                    sbError.AppendLine(ErrorClass._errorDict["SSN"]);
                     sbError.AppendLine();
                 }
                 if (!DataDict._dictCustomer.ContainsKey(ssn))
                 {
-                    sbError.AppendLine(ErrorClass._errorDict["SSN"]);
+                    sbError.AppendLine(ErrorClass._errorDict["NoCus"]);
                     sbError.AppendLine();
                 }
                 if (string.IsNullOrEmpty(sbError.ToString()))
