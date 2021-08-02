@@ -414,12 +414,7 @@ namespace PaymentPortal.Services
                         sbError.AppendLine(ErrorClass._errorDict["GreaterAmount"]);
                         sbError.AppendLine();
                     }
-                }
-                else
-                {
-                    errMessage = sbError.ToString();
-                    sbError.Clear();
-                }
+                }               
             }
             catch (Exception ex)
             {

@@ -76,26 +76,32 @@ namespace PaymentPortal.Helper
         }
         public void UpdateInvoiceBalance(List<int> invoiceList,int amount)
         {
-            foreach(var item in invoiceList)
+            Dictionary<int,int> balanceList = new Dictionary<int,int>();
+            foreach (var item in invoiceList)
+            {
+                balanceList.Add(item,DataDict._invoiceNumbersWithBalance[item]);
+            }
+            foreach (var item in balanceList.OrderBy(x => x.Value))
             {
                 if (amount <= 0) break;
 
-                if(amount<=DataDict._invoiceNumbersWithBalance[item])
-                {                   
-                    DataDict._invoiceNumbersWithBalance[item] -= amount;
+                if (amount <= item.Value)
+                {
+                    DataDict._invoiceNumbersWithBalance[item.Key] -= amount;
                     amount = 0;
                 }
                 else
                 {
-                    var temp = DataDict._invoiceNumbersWithBalance[item];
-                    DataDict._invoiceNumbersWithBalance[item] = 0;
+                    var temp = DataDict._invoiceNumbersWithBalance[item.Key];
+                    DataDict._invoiceNumbersWithBalance[item.Key] = 0;
                     amount -= temp;
 
                 }
+            }
 
             }
         }
 
 
     }
-}
+
