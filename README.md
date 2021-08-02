@@ -4,7 +4,7 @@ This Api contains calls to create customers, create payments, create invoice , g
 
 Using SSN (6 digit number as unique identifier while creating customer)
 
-Deployed to AWS Lambda as a serverless Web APi  -please find the URL - for the server AWS lambda- https://qnazema1wi.execute-api.us-east-1.amazonaws.com/Prod/
+Deployed to AWS Lambda as a serverless Web APi  -find the URL - for the server AWS lambda- https://qnazema1wi.execute-api.us-east-1.amazonaws.com/Prod/
 
 1.) https://qnazema1wi.execute-api.us-east-1.amazonaws.com/Prod/customerList
     GetAllCustomers()
